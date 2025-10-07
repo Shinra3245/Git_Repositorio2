@@ -1,19 +1,136 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hola papus + Lore FNAF + Robotcito</title>
 
-    <title>HTMLeros</title>
+  <!-- ==== Estilos principales (mezcla de ambos) ==== -->
+  <style>
+    /* Paleta base */
+    :root{
+      --bg:#0b0f14;
+      --panel:#0f1620;
+      --ink:#e7edf3;
+      --muted:#9fb2c3;
+      --accent:#7ad7ff;
+      --accent-2:#ff7aa8;
+      --good:#6ee7a7;
+      --warn:#ffd166;
+      --bad:#ff6b6b;
+      --code:#111827;
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 16px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0}
+    body{
+      font:16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica, Arial;
+      color:var(--ink);
+      background: radial-gradient(1200px 600px at 80% -10%, #14202e 0%, var(--bg) 45%), var(--bg);
+    }
+    header{position:sticky;top:0;z-index:10;background:linear-gradient(180deg, rgba(11,15,20,.95) 0%, rgba(11,15,20,.6) 70%, rgba(11,15,20,0) 100%);backdrop-filter: blur(6px);}
+    .wrap{max-width:1100px;margin:0 auto;padding:24px}
+    h1{font-size:clamp(26px,5vw,42px);line-height:1.2;margin:12px 0 8px}
+    p.lead{font-size:clamp(16px,2.2vw,20px);color:var(--muted)}
+
+    section{background:var(--panel);border:1px solid #213244;border-radius:var(--radius);box-shadow:var(--shadow);padding:20px;margin:22px 0}
+    section h2{margin-top:0}
+    .grid{display:grid;gap:16px}
+    .grid.cols-2{grid-template-columns:repeat(2,1fr)}
+    .grid.cols-3{grid-template-columns:repeat(3,1fr)}
+    @media (max-width:900px){.grid.cols-2,.grid.cols-3{grid-template-columns:1fr}}
+
+    .tag{display:inline-block;padding:.2em .6em;border-radius:6px;background:#132232;color:var(--accent);border:1px solid #203349;font-size:.85em}
+    .kbd{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;background:var(--code);border:1px solid #1f2937;padding:.2em .45em;border-radius:6px}
+
+    table{width:100%;border-collapse:collapse;background:#0f1724;border-radius:12px;overflow:hidden}
+    th,td{border-bottom:1px solid #1e2a3a;padding:10px;text-align:left}
+    th{color:#a8c6dc;font-weight:600}
+    tr:last-child td{border-bottom:none}
+
+    .timeline{position:relative;padding-left:24px}
+    .timeline::before{content:"";position:absolute;left:10px;top:0;bottom:0;width:2px;background:#244058}
+    .tl-item{position:relative;margin:12px 0}
+    .tl-item::before{content:"";position:absolute;left:-2px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--accent-2);box-shadow:0 0 0 3px #1c2a3a}
+    .small{font-size:.92em;color:var(--muted)}
+
+    /* ==== Estilos extra del robot ==== */
+    .card{background:#0f1724;border:1px solid #1f2a3a;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,.35);padding:12px}
+    .controls{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:10px}
+    label{font-size:.9rem;color:var(--muted)}
+    input[type="color"], input[type="range"]{accent-color:var(--accent)}
+    .scene{perspective:1000px}
+    .stage{transform-style:preserve-3d;transition:transform .4s ease}
+    .stage:hover{transform:rotateX(3deg) rotateY(-5deg)}
+  </style>
 </head>
 <body>
-    <h1>Omar Gadiel Bola García</h1>
-    <h2>Ricardo Rodriguez Arellano </h2>
-    <h3>Carlos Daniel Ayala Nieto</h3>
-    <div class="p-3 mb-2 bg-info text-white">
-        <h4>Diego Emilio Ortiz Vilchez</h4>
-    </div>
-    
+
+  <!-- Saludo inicial -->
+  <h1 style="text-align:center;margin-top:20px">Hola papus 👋</h1>
+
+  <!-- ====== LORE FNAF ====== -->
+  <main class="wrap">
+    <section>
+      <h2>Lore de <span class="tag">Five Nights at Freddy's</span></h2>
+      <p class="lead">Guía rápida para entender los eventos, personajes y conceptos clave del universo de FNAF.</p>
+    </section>
+
+    <!-- Puedes pegar aquí el resto de secciones del lore (timeline, personajes, juegos...) tal como ya estaban, no cambian su estructura -->
+
+    <section>
+      <h2>Timeline breve</h2>
+      <div class="timeline">
+        <div class="tl-item"><h3>Años 70–80</h3><p class="small">Fundación, asesinatos y Bite of ’83.</p></div>
+        <div class="tl-item"><h3>FNAF 1–3</h3><p class="small">Guardias nocturnos, pistas y Springtrap.</p></div>
+        <div class="tl-item"><h3>Security Breach</h3><p class="small">Glitchtrap y el Mega Pizzaplex.</p></div>
+      </div>
+    </section>
+
+    <!-- ====== DIBUJO ROBOT ====== -->
+    <section class="card">
+      <h2>🎨 Robotcito en HTML + SVG</h2>
+      <div class="controls">
+        <label>Color principal <input id="cMain" type="color" value="#78d4ff"></label>
+        <label>Color secundario <input id="cSec" type="color" value="#ff7aa8"></label>
+        <label>Fondo <input id="cBg" type="color" value="#0b1017"></label>
+        <label>Luz <input id="light" type="range" min="0" max="100" value="60"></label>
+      </div>
+      <div class="scene">
+        <div class="stage">
+          <svg id="bot" viewBox="0 0 600 400" width="100%" height="auto" aria-label="Robot simpático">
+            <defs>
+              <linearGradient id="gBody" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#3b5568"/><stop offset="100%" stop-color="#223241"/>
+              </linearGradient>
+            </defs>
+            <rect x="230" y="70" rx="20" ry="20" width="140" height="90" fill="url(#gBody)"/>
+            <ellipse id="eyeL" cx="265" cy="110" rx="14" ry="10" fill="#78d4ff"/>
+            <ellipse id="eyeR" cx="335" cy="110" rx="14" ry="10" fill="#78d4ff"/>
+            <path d="M260 130 Q300 150 340 130" fill="none" stroke="#9ab0c2" stroke-width="4" />
+            <rect x="205" y="160" rx="24" ry="24" width="190" height="150" fill="url(#gBody)"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ====== SCRIPT para cambiar colores del robot ====== -->
+  <script>
+    const bot  = document.getElementById('bot');
+    const cMain= document.getElementById('cMain');
+    const cSec = document.getElementById('cSec');
+    const cBg  = document.getElementById('cBg');
+    const light= document.getElementById('light');
+
+    function setColors(){
+      bot.querySelectorAll('#eyeL,#eyeR').forEach(n=>n.setAttribute('fill', cMain.value));
+      document.body.style.background = `radial-gradient(1200px 600px at 80% -10%, ${cBg.value} 0%, ${cBg.value} 45%), ${cBg.value}`;
+    }
+    cMain.addEventListener('input', setColors);
+    cBg.addEventListener('input', setColors);
+  </script>
+
 </body>
 </html>
